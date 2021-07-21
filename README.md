@@ -2,15 +2,12 @@
 <p 
   align="center">
   <img 
-    src="https://raw.githubusercontent.com/maxhvesser/showroom/master/images/ic_showroom.svg" 
+    src="https://raw.githubusercontent.com/finn-no/showroom/master/images/ic_showroom.svg" 
     height="100">
 </p>
 </br>
 
 ## Showroom
-
-[![Build Status](https://travis-ci.com/MaxHvesser/showroom.svg?branch=master)](https://travis-ci.com/MaxHvesser/showroom) [![](https://jitpack.io/v/maxhvesser/showroom.svg)](https://jitpack.io/#maxhvesser/showroom)
-
 
 Showroom is an image gallery library built for Android. The aim of this library is to provide a single view component that provides an image gallery experience almost completely out-of-the-box with as little configuration from the consumer as possible. The project utilizes Kotlin and is very much in active development.
 
@@ -39,29 +36,29 @@ Currently, the project also makes use the following open source libraries:
 <p
   align="left">
   <img 
-      src="https://raw.githubusercontent.com/maxhvesser/showroom/master/images/screenshot_home.jpg"
+      src="https://raw.githubusercontent.com/finn-no/showroom/master/images/screenshot_home.jpg"
       width="250">
   <img 
-      src="https://raw.githubusercontent.com/maxhvesser/showroom/master/images/screenshot_gallery.jpg"
+      src="https://raw.githubusercontent.com/finn-no/showroom/master/images/screenshot_gallery.jpg"
       width="250">
   <img 
-      src="https://raw.githubusercontent.com/maxhvesser/showroom/master/images/showroom_recording.webp"
+      src="https://raw.githubusercontent.com/finn-no/showroom/master/images/showroom_recording.webp"
       width="250">
 </p>
 
 ### Dependency
 
-This library is currently accessible via [JitPack](https://jitpack.io/#maxhvesser/showroom) and can therefore be used in your project by adding the following to your `build.gradle` file:
+This library is currently accessible via [JitPack](https://jitpack.io/#finn-no/showroom) and can therefore be used in your project by adding the following to your `build.gradle` file:
 
 ```Gradle
 dependencies {
-    implementation 'com.github.maxhvesser:showroom:1.1.5'
+    implementation 'com.github.finn-no:showroom:1.1.4-alpha'
 }
 ```
 
 ### Setup
 
-Please see the [sameple app](https://github.com/maxhvesser/showroom/tree/master/app/src/main) for a more detailed example of a suggested way to setup this project in your own app.
+Please see the [sameple app](https://github.com/finn-no/showroom/tree/master/app/src/main) for a more detailed example of a suggested way to setup this project in your own app.
 
 **Initial setup**
 
@@ -107,7 +104,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 ### Releases
 
-The current release is [v1.1.5](https://github.com/maxhvesser/showroom/releases/tag/1.1.5) found at the respective link otherwise visit [releases](https://github.com/maxhvesser/showroom/releases) for the complete list.
+The current release is [v1.1.4-alpha](https://github.com/finn-no/showroom/releases/tag/1.1.4-alpha) found at the respective link otherwise visit [releases](https://github.com/finn-no/showroom/releases) for the complete list.
 
 ### License
 
