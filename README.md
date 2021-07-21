@@ -9,6 +9,8 @@
 
 ## Showroom
 
+[![](https://jitpack.io/v/finn-no/showroom.svg)](https://jitpack.io/#finn-no/showroom)
+
 Showroom is an image gallery library built for Android. The aim of this library is to provide a single view component that provides an image gallery experience almost completely out-of-the-box with as little configuration from the consumer as possible. The project utilizes Kotlin and is very much in active development.
 
 <sup>**Note: currently the project is using a Release Canditate version of the [AndroidX Core KTX library](https://developer.android.com/jetpack/androidx/releases/core), this is to get access to the latest compatibility APIs that the library has to offer due to issues with immersive mode pre version 1.5.0.**</sup>
@@ -52,7 +54,7 @@ This library is currently accessible via [JitPack](https://jitpack.io/#finn-no/s
 
 ```Gradle
 dependencies {
-    implementation 'com.github.finn-no:showroom:1.1.4-alpha'
+    implementation 'com.github.finn-no:showroom:1.1.5'
 }
 ```
 
@@ -104,7 +106,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 ### Releases
 
-The current release is [v1.1.4-alpha](https://github.com/finn-no/showroom/releases/tag/1.1.4-alpha) found at the respective link otherwise visit [releases](https://github.com/finn-no/showroom/releases) for the complete list.
+The current release is [v1.1.5](https://github.com/finn-no/showroom/releases/tag/1.1.5) found at the respective link otherwise visit [releases](https://github.com/finn-no/showroom/releases) for the complete list.
 
 ### License
 
