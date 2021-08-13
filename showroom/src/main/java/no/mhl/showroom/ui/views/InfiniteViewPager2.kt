@@ -29,9 +29,7 @@ class InfiniteViewPager2(
             else -> viewPager2.currentItem - 1
         }
         set(value) {
-            println("hohoho bef " + currentItemPosition)
             viewPager2.setCurrentItem(value + 1, false)
-            println("hohoho af " + currentItemPosition)
         }
     // endregion
 
