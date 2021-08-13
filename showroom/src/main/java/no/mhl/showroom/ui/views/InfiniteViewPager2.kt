@@ -47,7 +47,7 @@ class InfiniteViewPager2(
             adapter = theAdapter
             setCurrentItem(1, false)
             offscreenPageLimit = preloadLimit
-           if (totalItemCount <= 3) isUserInputEnabled = false
+           if (isSingleImage()) isUserInputEnabled = false
         }
 
         internalRecycler.apply {
@@ -83,6 +83,12 @@ class InfiniteViewPager2(
         }
         // endregion
 
+    }
+    // endregion
+
+    // region helper functions
+    private fun isSingleImage(): Boolean {
+        return (totalItemCount - viewPager2.offscreenPageLimit) == 0
     }
     // endregion
 
