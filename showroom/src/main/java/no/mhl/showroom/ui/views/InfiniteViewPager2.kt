@@ -15,6 +15,12 @@ class InfiniteViewPager2(
     attrs: AttributeSet?
 ) : FrameLayout(context, attrs) {
 
+    // region Constants
+    companion object {
+        const val EXCESS_ITEM_COUNT: Int = 2
+    }
+    //endregion
+
     // region View Properties
     private val viewPager2 by lazy { findViewById<ViewPager2>(R.id.view_pager_infinite) }
     private val internalRecycler by lazy { viewPager2.getChildAt(0) as RecyclerView }
@@ -77,7 +83,7 @@ class InfiniteViewPager2(
 
             when {
                 firstItemVisible == (itemCount - 1) && dx > 0 -> recyclerView.scrollToPosition(1)
-                lastItemVisible == 0 && dx < 0 -> recyclerView.scrollToPosition(itemCount - 2)
+                lastItemVisible == 0 && dx < 0 -> recyclerView.scrollToPosition(itemCount - EXCESS_ITEM_COUNT)
             }
 
         }
@@ -88,7 +94,7 @@ class InfiniteViewPager2(
 
     // region helper functions
     private fun isSingleImage(): Boolean {
-        return (totalItemCount - viewPager2.offscreenPageLimit) == 0
+        return (totalItemCount - EXCESS_ITEM_COUNT) == 1
     }
     // endregion
 
