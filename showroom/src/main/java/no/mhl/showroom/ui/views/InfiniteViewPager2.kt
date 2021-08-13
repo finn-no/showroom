@@ -47,7 +47,7 @@ class InfiniteViewPager2(
             adapter = theAdapter
             setCurrentItem(1, false)
             offscreenPageLimit = preloadLimit
-           if(totalItemCount <= 3) isUserInputEnabled = false
+           if (totalItemCount <= 3) isUserInputEnabled = false
         }
 
         internalRecycler.apply {
