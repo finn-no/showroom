@@ -6,6 +6,7 @@ import android.content.res.TypedArray
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Build
+import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -64,6 +65,7 @@ constructor(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs
     private var immersed: Boolean = false
     private var topPaddingUpdated: Boolean = false
     private var bottomPaddingUpdated: Boolean = false
+    private var currentPosition: Int = 0
     // endregion
 
     // region Custom Attributes
@@ -367,6 +369,18 @@ constructor(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs
     // region IO Events
     fun setNavigationExitEvent(backPressedEvent: ((position: Int) -> Unit)) {
         onBackNavigationPressed = backPressedEvent
+    }
+    // endregion
+
+    // region lifecycle
+    override fun onSaveInstanceState(): Parcelable? {
+        currentPosition = imageViewPager.currentItemPosition
+        return super.onSaveInstanceState()
+    }
+
+    override fun onRestoreInstanceState(state: Parcelable?) {
+        imageViewPager.currentItemPosition = currentPosition
+        super.onRestoreInstanceState(state)
     }
     // endregion
 
