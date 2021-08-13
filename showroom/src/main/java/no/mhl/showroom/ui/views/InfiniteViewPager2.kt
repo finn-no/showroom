@@ -23,13 +23,15 @@ class InfiniteViewPager2(
     // region Properties
     private var totalItemCount = 0
     var currentItemPosition: Int
-        get() = when(viewPager2.currentItem) {
+        get() = when (viewPager2.currentItem) {
             0 -> totalItemCount - 3
             totalItemCount - 1 -> 0
             else -> viewPager2.currentItem - 1
         }
         set(value) {
+            println("hohoho bef " + currentItemPosition)
             viewPager2.setCurrentItem(value + 1, false)
+            println("hohoho af " + currentItemPosition)
         }
     // endregion
 
@@ -47,6 +49,7 @@ class InfiniteViewPager2(
             adapter = theAdapter
             setCurrentItem(1, false)
             offscreenPageLimit = preloadLimit
+           if(totalItemCount <= 3) isUserInputEnabled = false
         }
 
         internalRecycler.apply {
