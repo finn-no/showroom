@@ -11,6 +11,8 @@ import no.mhl.showroom.R
 import no.mhl.showroom.data.provideGalleryData
 import no.mhl.showroom.ui.Showroom
 
+private const val KEY_GALLERY_INDEX = "KEY_GALLERY_INDEX"
+
 class GalleryFragment : Fragment() {
 
     // region View Properties
@@ -25,21 +27,22 @@ class GalleryFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_gallery, container, false)
 
-        setupView(view)
+        val startIndex = savedInstanceState?.getInt(KEY_GALLERY_INDEX, 0) ?: 0
+        setupView(view, startIndex)
 
         return view
     }
     // endregion
 
     // region View Setup
-    private fun setupView(view: View) {
+    private fun setupView(view: View, startIndex: Int) {
         showroom = view.findViewById(R.id.showroom)
 
-        setupShowroom()
+        setupShowroom(startIndex)
     }
 
-    private fun setupShowroom() {
-        showroom.attach((activity as AppCompatActivity), provideGalleryData())
+    private fun setupShowroom(startIndex: Int) {
+        showroom.attach(activity as AppCompatActivity, provideGalleryData(), startIndex)
         showroom.setNavigationExitEvent { findNavController().popBackStack()  }
     }
     // endregion
@@ -51,4 +54,8 @@ class GalleryFragment : Fragment() {
     }
     // endregion
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt(KEY_GALLERY_INDEX, showroom.currentPosition)
+        super.onSaveInstanceState(outState)
+    }
 }
