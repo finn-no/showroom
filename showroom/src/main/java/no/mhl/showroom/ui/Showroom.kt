@@ -234,6 +234,7 @@ constructor(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs
         }
 
         setThumbnailAsSelected(initialPosition)
+        thumbnailRecycler.scrollToPosition(initialPosition)
     }
 
     private fun setupToolbar() {
