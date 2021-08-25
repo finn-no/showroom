@@ -64,6 +64,7 @@ constructor(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs
     private var immersed: Boolean = false
     private var topPaddingUpdated: Boolean = false
     private var bottomPaddingUpdated: Boolean = false
+    val currentPosition get() = imageViewPager.currentItemPosition
     // endregion
 
     // region Custom Attributes
